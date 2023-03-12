@@ -26,12 +26,16 @@ h1 {
     color: blue;
 }
 
-.text__container img {
+.text__container .img__mem-transform {
     display: none;
 }
 
-.text__container .icon__mem {
-    visibility: hidden;
+.text__container .icon__mem-plus {
+    display: none;
+}
+
+.text__container .icon__mem-times {
+    display: none;
 }
 
 .first__mem img {
@@ -44,8 +48,8 @@ h1 {
     cursor: pointer;
 }
 
-.text__container:hover .icon__mem {
-    visibility: visible;
+.text__container:hover .icon__mem-plus {
+    display: block;
 }
 
 .first__mem {
@@ -56,6 +60,32 @@ h1 {
     margin: 10px;
     padding: 15px 0px 0px 0px;
     border-top: 1px solid grey;
+}
+
+.mem:hover .img__mem-transform {
+    display: block;
+    animation-name: appear-img;
+    animation-duration: 1s;
+}
+
+@keyframes appear-img {
+    from {
+        opacity: 0.4;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mem:hover .icon__mem-plus {
+    display: none;
+}
+
+.mem:hover .icon__mem-times {
+    display: block;
 }
 
 .header__mem {
